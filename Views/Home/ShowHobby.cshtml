@@ -1,0 +1,30 @@
+
+<h1>@ViewBag.OneHobby.HobbyName</h1>
+<br>
+<br>
+<h3>Description:</h3>
+<h5>@ViewBag.OneHobby.Description</h5>
+
+
+
+<br>
+<br>
+<form action="/OrderHobby" method="post">
+    <div class= "form-group">
+        <input type="hidden" name="HobbyId" value="@ViewBag.OneHobby.HobbyId">
+        <input type="hidden" name="UserId" value="@ViewBag.OneHobby.UserId">
+        <input type="submit" value="Become An Enthusiast" class= "btn btn-success">
+    </div>
+    
+    
+    <h4>@ViewBag.OneHobby.HobbyName Enthusiasts</h4>
+
+    @foreach (var l in ViewBag.OrderedHobby)
+    {
+        @l.Creator.UserName 
+
+    } 
+    <p>Shawn2</p>
+
+</form>
+

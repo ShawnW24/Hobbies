@@ -1,0 +1,22 @@
+<h1>Welcome, @ViewBag.loggedIn.UserName</h1>
+<br>
+<br>
+<div class ="text-center">
+    <h1>.::Hobbies::.</h1>
+    <table style="width:25%">
+        <tr>
+            <th>Name</th>
+            <th>Enthusiasts</th>
+        </tr>           
+        @foreach (Hobby h in ViewBag.AllHobbies)
+        {
+            <tr>
+                <td> <a href="ShowHobby/@h.HobbyId">@h.HobbyName</a></td>
+                <td>@h.UserHobbies.Count</td>
+                
+            </tr>
+        }
+    </table>
+    <br>
+    <br>
+    <a href="AddHobby">Create A Hobby</a>
